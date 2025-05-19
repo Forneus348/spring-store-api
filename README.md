@@ -24,4 +24,4 @@
     Description TEXT,
   OrderDateTime date NOT NULL
 );</code></pre>
-7. Запуск проекта
+6. Запуск проекта
