@@ -18,6 +18,14 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+    public ResponseServer findByNameSubstring(String name) {
+        try {
+            return new ResponseServer(true, HttpStatus.OK, List.of(""), productRepository.findByNameContainingIgnoreCase(name));
+        } catch (Exception exception) {
+            return new ResponseServer(false, HttpStatus.BAD_REQUEST, List.of("Неизвестная ошибка: ", exception.getMessage()), new Product());
+        }
+    }
+
     public ResponseServer findAll() {
         try {
             return new ResponseServer(true, HttpStatus.OK, List.of(""), productRepository.findAll());

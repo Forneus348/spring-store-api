@@ -21,6 +21,13 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping(path = "/search/{name}")
+    public ResponseEntity<ResponseServer> findByRegistr(@PathVariable String name) {
+//        List<Product> products = productService.findByNameSubstring(name);
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseServer(true, HttpStatus.OK, List.of(""), productService.findByNameSubstring(name)));
+    }
+
+
     @GetMapping
     public ResponseEntity<ResponseServer> findAll() {
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseServer(true, HttpStatus.OK, List.of(""), productService.findAll()));
