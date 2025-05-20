@@ -1,6 +1,5 @@
 package com.example.store_api.repository;
 
-
 import java.time.LocalDate;
 
 public class ProductDto {
