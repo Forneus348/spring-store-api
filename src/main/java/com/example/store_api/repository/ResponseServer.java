@@ -1,14 +1,9 @@
 package com.example.store_api.repository;
 
-import lombok.*;
-import org.springframework.http.HttpStatus;
 
+import org.springframework.http.HttpStatus;
 import java.util.List;
 
-/*@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor*/
 public class ResponseServer {
     public boolean isSuccess;
     public HttpStatus statusCode;
